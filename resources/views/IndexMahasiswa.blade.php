@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite(['resources/saas/app.scss', 'resources/js/app.js'])
-</head>
-<body> 
-    <div>
+@extends('layouts.layouts')
+
+@section('content')
+    <div class="px-10">
+        <a href="{{ route("create.mahasiswa") }}"
         <br>
-        <table class="table table-striped table-striped-columns">
+        <table class="w-full">
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">NIM</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Tempat Lahir</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Jurusan</th>
-                <th scope="col">Angkatan</th>
-                <th scope="col">Action</th>
+                <th class="bg-blue-400 text-white p-2">#</th>
+                <th class="bg-blue-400 text-white">NIM</th>
+                <th class="bg-blue-400 text-white">Nama</th>
+                <th class="bg-blue-400 text-white">Tempat Lahir</th>
+                <th class="bg-blue-400 text-white">Tanggal Lahir</th>
+                <th class="bg-blue-400 text-white">Jurusan</th>
+                <th class="bg-blue-400 text-white">Angkatan</th>
+                <th class="bg-blue-400 text-white">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,18 +36,6 @@
             </table>
         
         <br>
-        <table border=1 style="background-color: black;">
-            <tr>
-                <th style="color: white;">ID</th>
-                <th style="color: white;">NIM</th>
-                
-            </tr>
-            
-            <tr>
-                
-            </tr>
-            
-        </table>
+
     </div>
-</body>
-</html>
+@endsection()

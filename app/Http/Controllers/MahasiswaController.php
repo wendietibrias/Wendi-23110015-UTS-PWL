@@ -12,7 +12,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        return view('IndexMahasiswa', ['mahasiswas' => Mahasiswa::all()]);
+        return view('IndexMahasiswa', ['mahasiswas' => Mahasiswa::all(), 'title'=>'Mahasiswa']);
     }
 
     /**
@@ -37,7 +37,9 @@ class MahasiswaController extends Controller
             'angkatan' => $request->angkatan
         ]);
 
-        return redirect()->route('mahasiswa.index');
+        if($data->save()){
+            return redirect()->route('index.mahasiswa');
+        }
     }
 
     /**
