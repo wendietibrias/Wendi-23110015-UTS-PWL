@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Absensi;
 use App\Http\Controllers\Controller;
 use App\Models\Mahasiswa;
 use App\Models\Matakuliah;
+use Exception;
 
 class AbsensiController extends Controller
 {
@@ -14,5 +15,13 @@ class AbsensiController extends Controller
             'matakuliahs'=>Matakuliah::all(),
             'title'=>'Absensi'
         ]);
+    }
+
+    public function store(){
+        try {
+
+        } catch(Exception $e){
+           
+        }
     }
 }

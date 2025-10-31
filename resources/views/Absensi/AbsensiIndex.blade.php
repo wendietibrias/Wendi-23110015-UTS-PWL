@@ -49,7 +49,7 @@
             <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">
                 <input type="hidden" name="mahasiswa_id[]" value="{{ $mahasiswa->id }}">
                 <p>{{ $mahasiswa->name }}</p>
-                <p>{{ $mahasiswa->nim }}</p>
+                <p class="text-[0.85rem] text-gray-500">{{ $mahasiswa->NIM }}</p>
             </td>
             <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">Isi Absen Terlebih Dahulu</td>
             <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">
