@@ -15,5 +15,12 @@ class Mahasiswa extends Model
         'angkatan'
     ];
 
-    protected $table = 'mahasiswas';
+    protected $table = 'table_mahasiswa';
+
+    public $timestamps = false;
+
+    public function mkSemester()
+    {
+        return $this->hasMany(mkSemester::class, 'id', 'mahasiswa_id');
+    }
 }
