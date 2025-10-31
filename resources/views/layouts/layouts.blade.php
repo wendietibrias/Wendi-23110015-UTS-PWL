@@ -18,7 +18,7 @@
           <a href="http://latihan1.test/mata-kuliah" class="text-white">Mata Kuliah</a>
         </li>
         <li>
-          <a href="http://latihan1.test/dosen" class="text-white">Absensi</a>
+          <a href="{{ route('index.absensi') }}" class="text-white">Absensi</a>
         </li>
       </ul>
     </div>

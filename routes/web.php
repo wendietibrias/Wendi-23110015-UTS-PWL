@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Absensi\AbsensiController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MataKuliah\MataKuliahController;
 use Illuminate\Support\Facades\Route;
@@ -9,10 +10,16 @@ Route::group(['prefix' => '/'], function () {
         return view('welcome');
     });
 
-    Route::group(['prefix' => 'mahasiswa'], function(){
-        Route::get('/', [MahasiswaController::class,'index'])->name('index.mahasiswa');
-        Route::get('/create', [MahasiswaController::class,'create'])->name('create.mahasiswa');
-        Route::post('/store', [MahasiswaController::class,'store'])->name('store.mahasiswa');
+    Route::group(['prefix' => 'mahasiswa'], function () {
+        Route::get('/', [MahasiswaController::class, 'index'])->name('index.mahasiswa');
+        Route::get('/create', [MahasiswaController::class, 'create'])->name('create.mahasiswa');
+        Route::post('/store', [MahasiswaController::class, 'store'])->name('store.mahasiswa');
+        Route::delete("/delete/{id}", [MahasiswaController::class, 'destroy'])->name('mahasiswa.delete');
+        Route::get('/edit/{id}', [MahasiswaController::class, 'find'])->name('mahasiswa.edit');
+    });
+
+    Route::group(['prefix'=>'absensi'], function(){
+        Route::get('/',[AbsensiController::class,'index'])->name('index.absensi');
     });
 
     Route::group(['prefix' => 'mata-kuliah'], function () {

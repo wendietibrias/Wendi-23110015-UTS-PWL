@@ -9,9 +9,9 @@
 <body>
     <div>
         <form method="post" action="@if(isset($mahasiswa))
-            {{ route('mahasiswa.update', ['id' => $mahasiswa['id']]) }}
+            {{ route('mahasiswa.edit', ['id' => $mahasiswa['id']]) }}
         @else
-            {{ route('create.mahasiswa') }}
+            {{ route('store.mahasiswa') }}
         @endif">
             @csrf
             @if(isset($mahasiswa))
