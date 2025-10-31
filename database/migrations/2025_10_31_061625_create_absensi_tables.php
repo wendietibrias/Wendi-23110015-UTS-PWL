@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absensi_tables', function (Blueprint $table) {
+        Schema::create('absensis', function (Blueprint $table) {
             $table->id();
+            $table->uuid('mahasiswa_id');
+            $table->uuid('matakuliah_id');
+            $table->date('tanggal_absensi');
+            $table->enum('status_absen', ['A', 'H', 'I', 'S']);
             $table->timestamps();
         });
     }

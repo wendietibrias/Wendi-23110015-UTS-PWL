@@ -4,23 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mahasiswa extends Model
+class Absensi extends Model
 {
     protected $fillable = [
-        'NIM',
-        'name',
-        'tempat_lahir',
-        'tanggal_lahir',
-        'jurusan',
-        'angkatan'
+        'mahasiswa_id',
+        'matakuliah_id',
+        'tanggal_absensi',
+        'status_absen'
     ];
 
-    protected $table = 'table_mahasiswa';
-
-    public $timestamps = false;
-
-    public function mkSemester()
-    {
-        return $this->hasMany(mkSemester::class, 'id', 'mahasiswa_id');
-    }
+    protected $table = 'absensis';
 }
