@@ -15,11 +15,11 @@
  
       <table class="w-full">
           <thead>
-              <tr class="border-b border-gray-300">
-                  <th>No</th>
-                  <th>Mahasiswa</th>
-                  <th>Kehadiran</th>
-                  <th>
+              <tr class="border-b bg-blue-400 border-gray-300">
+                  <th class="text-white">No</th>
+                  <th class="text-white">Mahasiswa</th>
+                  <th class="text-white">Kehadiran</th>
+                  <th class="text-white">
                       Status
                       <div class="flex items-center justify-center">
                           <div class="flex items-center gap-x-1">
@@ -48,10 +48,20 @@
             <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">{{ $no + 1 }}</td>
             <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">
                 <input type="hidden" name="mahasiswa_id[]" value="{{ $mahasiswa->id }}">
-                <p>{{ $mahasiswa->name }}</p>
+                <p class="text-[0.9rem]">{{ $mahasiswa->name }}</p>
                 <p class="text-[0.85rem] text-gray-500">{{ $mahasiswa->NIM }}</p>
             </td>
-            <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">Isi Absen Terlebih Dahulu</td>
+            <td class="text-center p-3 border-b border-gray-200 text-[0.9rem] @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">
+                @if($no == 0)
+                <button class="py-2 px-3 bg-green-400 text-white text-[0.85rem] font-bold rounded-md">Masuk</button>
+                @elseif($no == 1)
+                <button class="py-2 px-3 bg-red-400 text-white text-[0.85rem] font-bold rounded-md">Alpha</button>
+                @elseif($no > 1 && $no % 2 == 0)
+                <button class="py-2 px-3 bg-yellow-400 text-white text-[0.85rem] font-bold rounded-md">Sakit</button>
+                @else
+                <button class="py-2 px-3 bg-blue-400 text-white text-[0.85rem] font-bold rounded-md">Izin</button>
+                @endif 
+            </td>
             <td class="text-center p-3 border-b border-gray-200 @if($no % 2 == 0) bg-blue-100 @else bg-gray-100 @endif">
                   <div class="flex items-center justify-center">
                     <div class="flex items-center gap-x-1">

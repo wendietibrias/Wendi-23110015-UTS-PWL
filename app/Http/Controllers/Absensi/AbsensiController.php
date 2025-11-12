@@ -17,7 +17,7 @@ class AbsensiController extends Controller
         ]);
     }
 
-    public function store(){
+    public function store($request){
         try {
 
         } catch(Exception $e){

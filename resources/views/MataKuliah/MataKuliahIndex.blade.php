@@ -31,7 +31,7 @@
                             <td class="bg-blue-100 py-3 text-center">{{ $matakuliah->nama_matakuliah }}</td>
                             {{-- <td class="bg-blue-100 py-3 text-center">{{ $matakuliah->sks }}</td>
                             <td class="bg-blue-100 py-3 text-center">{{ $matakuliah->dosen->nama }} - {{ $matakuliah->dosen->nip }}</td> --}}
-                            <td class="bg-blue-100 py-3 text-center">
+                            <td class="bg-blue-100 py-3 text-center flex items-center gap-x-2 justify-center">
                                 <form action="{{ route('mata_kuliah.delete', $matakuliah->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

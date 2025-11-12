@@ -15,7 +15,7 @@
           <a href="{{ route("index.mahasiswa") }}" class="text-white">Mahasiswa</a>
         </li>
         <li>
-          <a href="http://latihan1.test/mata-kuliah" class="text-white">Mata Kuliah</a>
+          <a href="{{ route('mata_kuliah.view') }}" class="text-white">Mata Kuliah</a>
         </li>
         <li>
           <a href="{{ route('index.absensi') }}" class="text-white">Absensi</a>
